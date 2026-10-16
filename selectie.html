@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selectie · ZZ Leiden concept</title>
+<link rel="icon" href="assets/crest.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-head{background:var(--blue);color:var(--white);padding:64px 0 40px;position:relative;overflow:hidden}
+.page-head h1{font-size:clamp(64px,10vw,140px)}
+.page-head p{color:#dfe5ff;margin-top:12px}
+.page-head .ghost{position:absolute;right:-20px;bottom:-30px;font-family:var(--display);font-weight:900;font-size:260px;line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.15);text-transform:uppercase}
+.tabs{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
+.tabs a{padding:9px 18px;border-radius:999px;border:2px solid rgba(255,255,255,.5);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+.tabs a:hover{background:var(--white);color:var(--blue)}
+.group{padding:56px 0 10px}
+.group h2{font-size:clamp(36px,4vw,52px);margin-bottom:24px;display:flex;align-items:center;gap:14px}
+.group h2::after{content:"";flex:1;height:2px;background:var(--line)}
+.squad{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.pl{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;background:linear-gradient(170deg,#e4eaff 0%,#a9bbf6 70%,#2f50d2 140%);cursor:pointer;isolation:isolate}
+.pl img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:88%;width:auto;max-width:none;mix-blend-mode:multiply;transition:transform .4s}
+.pl:hover img{transform:translateX(-50%) scale(1.04)}
+.pl .no{position:absolute;right:14px;top:8px;font-family:var(--display);font-weight:900;font-size:84px;line-height:1;color:rgba(255,255,255,.7);z-index:-1}
+.pl .info{position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(0deg,rgba(11,20,51,.92) 0%,rgba(11,20,51,0) 100%);color:var(--white)}
+.pl .info small{display:block;font-size:12px;font-weight:600;opacity:.85}
+.pl .info b{display:block;font-family:var(--display);font-size:28px;font-weight:900;text-transform:uppercase;line-height:.95}
+.pl .info span{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--lime)}
+.pl .more{position:absolute;inset:0;background:rgba(11,20,51,.94);color:var(--white);padding:22px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;opacity:0;transition:opacity .25s}
+.pl:hover .more,.pl.open .more{opacity:1}
+.pl .more dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13px}
+.pl .more dt{color:var(--lime);font-weight:700;text-transform:uppercase;font-size:11px;letter-spacing:1px}
+.pl .more b{font-family:var(--display);font-size:30px;font-weight:900;text-transform:uppercase;line-height:.95}
+.staff{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.st{border:1px solid var(--line);border-radius:14px;padding:16px}
+.st b{display:block;font-weight:700}
+.st span{font-size:12px;color:var(--grey)}
+.coach{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;background:var(--navy);color:var(--white);border-radius:20px;overflow:hidden;margin-bottom:18px}
+.coach .ph{width:220px;height:220px;background:linear-gradient(170deg,#e4eaff,#a9bbf6);overflow:hidden}
+.coach .ph img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}
+.coach b{font-family:var(--display);font-size:46px;font-weight:900;text-transform:uppercase;line-height:1;display:block}
+@media (max-width:1100px){.squad{grid-template-columns:repeat(3,1fr)}.staff{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.squad,.staff{grid-template-columns:repeat(2,1fr)}.pl .info b{font-size:22px}.pl .no{font-size:60px}.coach{grid-template-columns:1fr}.coach .ph{width:100%;height:260px}.coach>div:last-child{padding:0 22px 22px}}
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="wrap">
+  <span class="concept" data-nl="<b>Concept</b> · ontwerp door Lenny Otoo · geen officiële clubwebsite" data-en="<b>Concept</b> · designed by Lenny Otoo · not the official club website"></span>
+  <nav><a href="index.html#tickets">Tickets</a><a href="https://www.zzleidenfanshop.nl" target="_blank" rel="noopener">Fanshop</a><a href="index.html#tv">ZZ TV</a><a href="index.html#partners">Business</a></nav>
+</div></div>
+
+<header class="main"><div class="wrap nav">
+  <a href="index.html" class="brand"><img src="assets/crest.png" alt="ZZ Leiden"><span>ZZ Leiden</span></a>
+  <nav class="links" id="links">
+    <a href="index.html#programma" data-nl="Programma" data-en="Fixtures"></a>
+    <a href="index.html#nieuws" data-nl="Nieuws" data-en="News"></a>
+    <a href="selectie.html" class="on" data-nl="Selectie" data-en="Squad"></a>
+    <a href="index.html#tv">ZZ TV</a>
+    <a href="index.html#community" data-nl="Maatschappelijk" data-en="Community"></a>
+    <a href="index.html#partners">Partners</a>
+    <a href="index.html#fotos" data-nl="Foto's" data-en="Photos"></a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang"><button id="nl">NL</button><button id="en">EN</button></div>
+    <a href="index.html#tickets" class="btn btn-lime">Tickets</a>
+    <button class="burger" id="burger" aria-label="Menu">&#9776;</button>
+  </div>
+</div></header>
+
+<section class="page-head"><div class="wrap">
+  <div class="eyebrow">BNXT League 2026/27</div>
+  <h1 class="display" data-nl="Selectie" data-en="Squad"></h1>
+  <p data-nl="Dertien spelers, één doel. Tik op een speler voor zijn profiel." data-en="Thirteen players, one goal. Tap a player for his profile."></p>
+  <div class="tabs"><a href="#guards">Guards</a><a href="#forwards">Forwards</a><a href="#centers" data-nl="Forward / Center" data-en="Forward / Center"></a><a href="#staf" data-nl="Staf" data-en="Staff"></a></div>
+  <div class="ghost">ZZ</div>
+</div></section>
+
+<main class="wrap" id="squad"></main>
+
+<div class="wrap"><section class="group" id="staf" style="padding-bottom:84px">
+  <h2 class="display" data-nl="Technische staf" data-en="Coaching staff"></h2>
+  <div class="coach">
+    <div class="ph"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/c51a202b-b4ed-46fb-a0fa-f7a30c8a2ac3.png&w=500" alt="Radenko Varagic"></div>
+    <div><div class="eyebrow" data-nl="Hoofdcoach" data-en="Head coach"></div><b>Radenko Varagic</b></div>
+  </div>
+  <div class="staff">
+    <div class="st"><b>Sebastian Lučić</b><span data-nl="Assistent-coach" data-en="Assistant coach"></span></div>
+    <div class="st"><b>Koen van Gerwen</b><span data-nl="Analist" data-en="Analyst"></span></div>
+    <div class="st"><b>Marja van Tilburg</b><span data-nl="Teammanager" data-en="Team manager"></span></div>
+    <div class="st"><b>Jasmijn de Lange</b><span data-nl="Teamassistent" data-en="Team assistant"></span></div>
+    <div class="st"><b>Dick Opdam</b><span data-nl="Teamassistent" data-en="Team assistant"></span></div>
+    <div class="st"><b>Erik van der Pot</b><span data-nl="Fysiotherapeut" data-en="Physiotherapist"></span></div>
+    <div class="st"><b>Sven Adriaanse</b><span data-nl="Fysiotherapeut" data-en="Physiotherapist"></span></div>
+    <div class="st"><b>Vincent Frerick</b><span data-nl="Kracht- en conditietrainer" data-en="Strength and conditioning"></span></div>
+    <div class="st"><b>Maarten Verschure</b><span data-nl="Teamarts" data-en="Team doctor"></span></div>
+  </div>
+</section></div>
+
+<footer><div class="wrap">
+  <div class="foot">
+    <div><img src="assets/crest.png" alt="ZZ Leiden"><div>Zorg en Zekerheid Leiden<br>Sportcomplex 1574, Leiden</div>
+      <div class="foot-partner"><img src="assets/zz-logo.png" alt="Zorg en Zekerheid"></div></div>
+    <div><b>Club</b><a href="selectie.html" data-nl="Selectie" data-en="Squad"></a><a href="index.html#programma" data-nl="Programma" data-en="Fixtures"></a><a href="index.html#community" data-nl="Maatschappelijk" data-en="Community"></a><a href="index.html#fotos" data-nl="Foto's" data-en="Photos"></a></div>
+    <div><b>Business</b><a href="index.html#partners">Partners</a><a href="https://www.eredivisiebasketballleiden.nl/businessclub" target="_blank" rel="noopener">Business club</a></div>
+    <div><b>Social</b><a href="https://www.instagram.com/zzleidenbasketball/" target="_blank" rel="noopener">Instagram</a><a href="https://linktr.ee/zzleidenbasketball" target="_blank" rel="noopener">YouTube · TikTok · Podcast</a></div>
+  </div>
+  <div class="disclaimer" data-nl="Dit is een concept, ontworpen door Lenny Otoo als onderdeel van een voorstel aan ZZ Leiden. Geen officiële website. Spelersgegevens en foto's komen van de clubwebsite." data-en="This is a concept, designed by Lenny Otoo as part of a proposal to ZZ Leiden. Not the official website. Player details and photos come from the club website."></div>
+</div></footer>
+
+<script>
+// Squad 2026/27 as published on the club website (number, first name, last name, position, height, born, previous club, photo id)
+var IMG='https://www.eredivisiebasketballleiden.nl/images/optimized/';
+var SQUAD=[
+ [0,'David','van Lobbrecht','F','2.00','01-05-2006','ZZ Leiden U19','c4805737-70cd-457f-b750-3b942be72279'],
+ [1,'Roel','van Overbeek','G','1.88','07-08-2000','PrismaWorx BAL','d0560477-7c8d-407d-a218-25aaa1fec6b4'],
+ [2,'Jairo','van den Berg','F','2.03','09-12-2006','Triple Threat Haarlem','52c02762-fc4c-4154-9ead-2013fdaffa91'],
+ [3,'Jamie','Bergens','G','1.89','15-12-2001','Clinica Ponferrada (ESP)','17ef85a4-1cab-4ba8-bb29-c5b1296c0d16'],
+ [5,'Nik','Graves','G','1.88','29-10-2003','Creighton (USA)','ccd8fb4d-0fc2-4294-af33-85c97f9d8dfa'],
+ [8,'Anias','Futrell','G','1.96','30-07-2002','Lindenwood (USA)','bc39efa1-2ed0-4b74-9059-9de16722a945'],
+ [9,'Jonathan','Beagle','C','2.05','10-10-2003','Richmond Athletics (USA)','4711ddb0-4d67-404f-b5bf-747ab13680fa'],
+ [11,'Loek','van Zeil','G','1.85','09-02-2006','ZZ Leiden','040c0b02-cd93-4416-a5f4-9b3a1d02b101'],
+ [12,'Joost','Blangé','F','2.03','12-08-2002','Feyenoord Basketball','11958864-9387-46d6-b095-e17450abb0bd'],
+ [13,'Sam','Huurman','FC','2.05','10-05-2001','ZZ Leiden','417da58e-81e2-4562-9abc-ee2f707d8d59'],
+ [22,'Jesper','Beelen','F','2.02','12-08-2008','PrismaWorx BAL','2a92ad21-16b2-40bc-a307-cfc90143ee18'],
+ [25,'Touko','Tainamo','FC','2.06','06-01-2001','USK Praha (CZE)','a677216a-d108-4f3b-8230-a7fafc72702c'],
+ [32,'Kjeld','Zuidema','F','1.94','21-06-2001','Donar Groningen','5cc986f6-5926-437f-84e3-7537705fe4ee']
+];
+var GROUPS=[['guards','Guards',['G']],['forwards','Forwards',['F']],['centers','Forward / Center',['FC','C']]];
+var POS={nl:{G:'Guard',F:'Forward',FC:'Forward / Center',C:'Center'},en:{G:'Guard',F:'Forward',FC:'Forward / Center',C:'Center'}};
+var L={nl:{h:'Lengte',b:'Geboren',p:'Vorige club'},en:{h:'Height',b:'Born',p:'Previous club'}};
+function renderSquad(){
+  var lang=window.__lang||'nl',m=document.getElementById('squad');
+  m.innerHTML=GROUPS.map(function(g){
+    var ps=SQUAD.filter(function(p){return g[2].indexOf(p[3])>-1});
+    return '<section class="group" id="'+g[0]+'"><h2 class="display">'+g[1]+'</h2><div class="squad">'+ps.map(function(p){
+      return '<article class="pl" tabindex="0" onclick="this.classList.toggle(\'open\')">'+
+        '<span class="no">'+p[0]+'</span>'+
+        '<img loading="lazy" src="'+IMG+p[7]+'.png&w=600" alt="'+p[1]+' '+p[2]+'">'+
+        '<div class="info"><small>'+p[1]+'</small><b>'+p[2]+'</b><span>#'+p[0]+' · '+POS[lang][p[3]]+'</span></div>'+
+        '<div class="more"><span class="eyebrow">#'+p[0]+' · '+POS[lang][p[3]]+'</span><b>'+p[1]+'<br>'+p[2]+'</b>'+
+        '<dl><dt>'+L[lang].h+'</dt><dd>'+p[4]+' m</dd><dt>'+L[lang].b+'</dt><dd>'+p[5]+'</dd><dt>'+L[lang].p+'</dt><dd>'+p[6]+'</dd></dl></div>'+
+      '</article>';
+    }).join('')+'</div></section>';
+  }).join('');
+}
+window.onLang=renderSquad;
+</script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZZ Leiden · Concept website</title>
+<meta name="description" content="Concept website voor Zorg en Zekerheid Leiden, ontworpen door Lenny Otoo. Geen officiële clubwebsite.">
+<link rel="icon" href="assets/crest.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.hero{position:relative;min-height:calc(100vh - 112px);max-height:860px;display:flex;align-items:flex-end;color:var(--white);overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0;background:url('https://www.eredivisiebasketballleiden.nl/images/optimized/0e904709-8127-477c-a2d4-1857780b72d7.jpg&w=1920') center 30%/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,20,51,.92) 0%,rgba(11,20,51,.55) 45%,rgba(11,20,51,0) 75%),linear-gradient(0deg,rgba(11,20,51,.9) 0%,transparent 45%)}
+.hero-ghost{position:absolute;left:-10px;top:40px;z-index:1;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(120px,22vw,320px);line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.12);white-space:nowrap;pointer-events:none}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:70px}
+.hero h1{font-size:clamp(68px,11vw,168px)}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p{max-width:480px;margin:20px 0 30px;font-size:17px;color:#dfe5ff}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.side-cta{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:6px}
+.side-cta a{background:var(--lime);color:var(--navy);font-weight:800;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:12px 14px;border-radius:0 10px 10px 0;writing-mode:vertical-rl;transform:rotate(180deg);box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.side-cta a.alt{background:var(--white);color:var(--blue)}
+.next{background:var(--blue);color:var(--white)}
+.next .wrap{display:grid;grid-template-columns:1.3fr auto auto;gap:36px;align-items:center;padding-top:30px;padding-bottom:30px}
+.next-teams{font-family:var(--display);font-weight:900;font-size:clamp(28px,3.4vw,44px);text-transform:uppercase;line-height:1}
+.next-teams span{color:var(--lime);font-size:.6em;margin:0 10px}
+.next-meta{font-size:14px;color:#dfe5ff;margin-top:8px}
+.countdown{display:flex;gap:14px}
+.countdown div{text-align:center;min-width:58px}
+.countdown strong{display:block;font-family:var(--display);font-size:46px;font-weight:900;line-height:1}
+.countdown small{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--lime)}
+.fx-row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(290px,1fr);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}
+.fx-row::-webkit-scrollbar{display:none}
+.fx{scroll-snap-align:start;background:var(--white);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:12px;border:1px solid var(--line)}
+.fx.home{border-top:5px solid var(--lime)}
+.fx-top{display:flex;justify-content:space-between;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.fx-tag{background:var(--off);color:var(--blue);padding:2px 10px;border-radius:999px;font-size:11px}
+.fx.home .fx-tag{background:var(--lime);color:var(--navy)}
+.fx-venue{font-size:12px;color:var(--grey)}
+.fx-teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;min-height:76px}
+.fx-teams b{font-family:var(--display);font-size:22px;font-weight:800;text-transform:uppercase;line-height:1}
+.fx-teams b:last-child{text-align:right}
+.fx-teams b.us{color:var(--blue)}
+.fx-time{font-family:var(--display);font-size:20px;font-weight:800;background:var(--navy);color:var(--white);padding:6px 10px;border-radius:8px}
+.fx-actions{margin-top:auto}
+.fx-actions .btn{width:100%}
+.news{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+.card{position:relative;border-radius:18px;overflow:hidden;background:var(--navy);color:var(--white);min-height:260px;display:flex;align-items:flex-end}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover img{transform:scale(1.05)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,20,51,.95) 0%,rgba(11,20,51,.1) 60%)}
+.card .txt{position:relative;z-index:1;padding:22px}
+.card .date{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--lime)}
+.card h3{font-family:var(--display);font-size:28px;font-weight:800;text-transform:uppercase;line-height:1;margin-top:6px}
+.card.big{grid-row:span 2;min-height:540px}
+.card.big h3{font-size:48px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.result{position:relative;border-radius:22px;overflow:hidden;color:var(--white);min-height:440px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;background:var(--navy)}
+.result .bg{position:absolute;inset:0;background:url('https://www.eredivisiebasketballleiden.nl/images/optimized/bb89728f-e5cc-428e-8045-6c711ff773df.jpg&w=1200') center/cover;opacity:.35}
+.result>*{position:relative}
+.score{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;text-align:center}
+.score .t{font-family:var(--display);font-size:30px;font-weight:800;text-transform:uppercase;line-height:1}
+.score .n{font-family:var(--display);font-size:96px;font-weight:900;line-height:.9}
+.score .n em{font-style:normal;color:var(--lime)}
+.quarters{display:flex;justify-content:center;gap:10px;font-size:12px;color:#c9cfe6;margin-top:16px}
+.quarters span{background:rgba(255,255,255,.1);padding:4px 10px;border-radius:999px}
+.potg{display:flex;align-items:center;justify-content:space-between;gap:14px;background:rgba(255,255,255,.08);border-radius:14px;padding:14px 16px;font-size:13px;flex-wrap:wrap}
+.potg img{height:22px}
+.spot{position:relative;border-radius:22px;overflow:hidden;min-height:440px;background:linear-gradient(160deg,#dbe4ff 0%,#9fb3f5 100%);display:flex;align-items:flex-end}
+.spot img{position:absolute;right:0;bottom:0;height:96%;width:52%;object-fit:cover;object-position:top center;mix-blend-mode:multiply}
+.spot .num{position:absolute;right:26px;top:14px;font-family:var(--display);font-size:150px;font-weight:900;color:rgba(255,255,255,.55);line-height:1}
+.spot .txt{position:relative;z-index:1;padding:30px;max-width:52%}
+.spot .first{font-family:var(--display);font-size:26px;font-weight:700;text-transform:uppercase;color:var(--blue-dark);line-height:1}
+.spot .last{font-family:var(--display);font-size:62px;font-weight:900;text-transform:uppercase;color:var(--navy);line-height:.9}
+.spot .pos{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin:8px 0 16px}
+.spot q{display:block;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:16px}
+.tv-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tv{border-radius:16px;overflow:hidden;background:var(--navy-2)}
+.tv .th{position:relative;aspect-ratio:16/9}
+.tv .th img{width:100%;height:100%;object-fit:cover}
+.tv .th::after{content:"\25B6";position:absolute;left:14px;bottom:14px;width:42px;height:42px;border-radius:50%;background:var(--lime);color:var(--navy);display:grid;place-items:center;font-size:14px}
+.tv .t{padding:14px 16px 18px}
+.tv .t small{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--lime)}
+.tv .t b{display:block;font-family:var(--display);font-size:22px;font-weight:800;text-transform:uppercase;line-height:1.05;margin-top:4px}
+.note{font-size:12px;color:var(--grey);margin-top:16px}
+.dark .note{color:#8892bd}
+.com{display:grid;grid-template-columns:1fr 1fr;border-radius:26px;overflow:hidden;background:var(--blue);color:var(--white)}
+.com-img{background:url('https://www.eredivisiebasketballleiden.nl/images/optimized/4f39f427-df5f-4934-859e-b2d08975ff13.jpg&w=1200') center/cover;min-height:460px}
+.com-txt{padding:48px}
+.com-txt h2{font-size:clamp(44px,5vw,72px)}
+.com-txt p{color:#dfe5ff;margin:16px 0 26px;max-width:460px}
+.com-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}
+.com-stats strong{display:block;font-family:var(--display);font-size:52px;font-weight:900;color:var(--lime);line-height:1}
+.com-stats span{font-size:12px;color:#dfe5ff;font-weight:600}
+.shop{display:grid;grid-template-columns:1.1fr .9fr;border-radius:26px;overflow:hidden;background:var(--off)}
+.shop-img{background:url('assets/team-kit.jpg') center 20%/cover;min-height:380px}
+.shop-txt{padding:48px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.shop-txt h2{font-size:clamp(44px,5vw,72px)}
+.shop-txt p{color:var(--grey);max-width:420px}
+.strategic{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;background:var(--navy);color:var(--white);border-radius:22px;padding:36px 40px}
+.strategic img{width:200px}
+.strategic h3{font-family:var(--display);font-size:38px;font-weight:900;text-transform:uppercase;line-height:1;margin:6px 0}
+.strategic p{color:#c9cfe6;font-size:14px;max-width:560px}
+.tier-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:18px}
+.tier{border-radius:16px;border:1px solid var(--line);padding:18px;background:var(--white)}
+.tier h4{font-family:var(--display);font-size:22px;font-weight:800;text-transform:uppercase;color:var(--blue)}
+.tier .lg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.tier .lg i{height:40px;border-radius:8px;background:var(--off);border:1px dashed #cfd4e2}
+.become{margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--lime);border-radius:22px;padding:30px 36px}
+.become h3{font-family:var(--display);font-size:42px;font-weight:900;text-transform:uppercase;line-height:1}
+.become p{font-size:14px;margin-top:6px;max-width:560px}
+.albums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.album{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:var(--navy)}
+.album img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.album:hover img{transform:scale(1.05)}
+.album::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,20,51,.9),transparent 55%)}
+.album .txt{position:absolute;left:18px;right:18px;bottom:16px;z-index:1;color:var(--white)}
+.album .txt b{font-family:var(--display);font-size:26px;font-weight:800;text-transform:uppercase;line-height:1;display:block}
+.album .txt small{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--lime)}
+.credit{margin-top:16px;font-size:13px;color:var(--grey)}
+.credit b{color:var(--navy)}
+.tickets{background:var(--lime);padding:64px 0}
+.tickets .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.tickets h2{font-size:clamp(50px,7.5vw,110px);color:var(--navy)}
+.tickets p{font-weight:600;margin-top:10px}
+@media (max-width:1020px){
+  .side-cta{display:none}
+  .next .wrap{grid-template-columns:1fr;gap:18px}
+  .news{grid-template-columns:1fr 1fr}
+  .card.big{grid-column:span 2;grid-row:span 1;min-height:420px}
+  .duo,.com,.shop{grid-template-columns:1fr}
+  .com-img,.shop-img{min-height:300px}
+  .tv-row{grid-template-columns:repeat(2,1fr)}
+  .tier-strip{grid-template-columns:repeat(2,1fr)}
+  .strategic{grid-template-columns:1fr}
+  .albums{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  .hero{min-height:620px}
+  .hero-ghost{top:20px}
+  .countdown strong{font-size:36px}
+  .countdown div{min-width:44px}
+  .news{grid-template-columns:1fr}
+  .card.big{grid-column:span 1;min-height:380px}
+  .card.big h3{font-size:36px}
+  .score .n{font-size:64px}
+  .score .t{font-size:22px}
+  .spot .last{font-size:46px}
+  .spot .txt{max-width:62%;padding:22px}
+  .spot .num{font-size:100px}
+  .com-txt,.shop-txt{padding:30px 22px}
+  .com-stats strong{font-size:40px}
+  .tv-row,.tier-strip{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="wrap">
+  <span class="concept" data-nl="<b>Concept</b> · ontwerp door Lenny Otoo · geen officiële clubwebsite" data-en="<b>Concept</b> · designed by Lenny Otoo · not the official club website"></span>
+  <nav><a href="#tickets">Tickets</a><a href="https://www.zzleidenfanshop.nl" target="_blank" rel="noopener">Fanshop</a><a href="#tv">ZZ TV</a><a href="#partners">Business</a></nav>
+</div></div>
+
+<header class="main"><div class="wrap nav">
+  <a href="index.html" class="brand"><img src="assets/crest.png" alt="ZZ Leiden"><span>ZZ Leiden</span></a>
+  <nav class="links" id="links">
+    <a href="#programma" data-nl="Programma" data-en="Fixtures"></a>
+    <a href="#nieuws" data-nl="Nieuws" data-en="News"></a>
+    <a href="selectie.html" data-nl="Selectie" data-en="Squad"></a>
+    <a href="#tv">ZZ TV</a>
+    <a href="#community" data-nl="Maatschappelijk" data-en="Community"></a>
+    <a href="#partners">Partners</a>
+    <a href="#fotos" data-nl="Foto's" data-en="Photos"></a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang"><button id="nl">NL</button><button id="en">EN</button></div>
+    <a href="#tickets" class="btn btn-lime">Tickets</a>
+    <button class="burger" id="burger" aria-label="Menu">&#9776;</button>
+  </div>
+</div></header>
+
+<div class="side-cta"><a href="#tickets">Tickets</a><a class="alt" href="https://www.zzleidenfanshop.nl" target="_blank" rel="noopener">Fanshop</a></div>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ghost">Leiden Leiden</div>
+  <div class="wrap">
+    <div class="eyebrow">#trotZZopLEIDEN</div>
+    <h1 class="display" data-nl="Trots op<br><em>Leiden</em>" data-en="Proud of<br><em>Leiden</em>"></h1>
+    <p data-nl="Topbasketbal in Sportcomplex 1574. Beleef de BNXT League met de club van de stad." data-en="Top basketball at Sportcomplex 1574. Experience the BNXT League with the city's club."></p>
+    <div class="hero-actions">
+      <a href="#tickets" class="btn btn-lime" data-nl="Koop tickets" data-en="Buy tickets"></a>
+      <a href="#programma" class="btn btn-ghost" data-nl="Programma" data-en="Fixtures"></a>
+    </div>
+  </div>
+</section>
+
+<section class="next" id="next"><div class="wrap">
+  <div>
+    <div class="eyebrow" data-nl="Volgende wedstrijd" data-en="Next game"></div>
+    <div class="next-teams"><b id="next-a">ZZ Leiden</b><span>VS</span><b id="next-b"></b></div>
+    <div class="next-meta" id="next-meta"></div>
+  </div>
+  <div class="countdown" id="countdown">
+    <div><strong>00</strong><small data-nl="Dagen" data-en="Days"></small></div>
+    <div><strong>00</strong><small data-nl="Uur" data-en="Hrs"></small></div>
+    <div><strong>00</strong><small data-nl="Min" data-en="Min"></small></div>
+    <div><strong>00</strong><small data-nl="Sec" data-en="Sec"></small></div>
+  </div>
+  <a href="#tickets" class="btn btn-lime">Tickets</a>
+</div></section>
+
+<section class="sec off" id="programma"><div class="wrap">
+  <div class="sec-head">
+    <h2 class="display" data-nl="Programma" data-en="Fixtures"></h2>
+    <div class="arrows"><button data-scroll="prev" data-target="fixtures" aria-label="Vorige">&larr;</button><button data-scroll="next" data-target="fixtures" aria-label="Volgende">&rarr;</button></div>
+  </div>
+  <div class="fx-row" id="fixtures"></div>
+</div></section>
+
+<section class="sec" id="nieuws"><div class="wrap">
+  <div class="sec-head">
+    <h2 class="display" data-nl="Laatste nieuws" data-en="Latest news"></h2>
+    <a class="more" href="https://www.eredivisiebasketballleiden.nl/actueel/nieuws" target="_blank" rel="noopener" data-nl="Al het nieuws &rarr;" data-en="All news &rarr;"></a>
+  </div>
+  <div class="news">
+    <a class="card big" href="https://www.eredivisiebasketballleiden.nl/actueel/nieuws/bericht/roel-van-overbeek-ik-wil-heel-graag-kampioen-worden" target="_blank" rel="noopener"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/b1b432e7-9bdd-4e3e-9ec8-59eb6bba0271.jpg&w=1200" alt=""><div class="txt"><div class="date">15 okt 2026</div><h3>Roel van Overbeek: ‘Ik wil heel graag kampioen worden’</h3></div></a>
+    <a class="card" href="https://www.eredivisiebasketballleiden.nl/actueel/nieuws/bericht/zz-leiden-moet-herstel-tonen-1" target="_blank" rel="noopener"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/f0c3cdc8-7394-4e14-86cd-0a06cbaf5b10.jpg&w=700" alt=""><div class="txt"><div class="date">14 okt 2026</div><h3>ZZ Leiden moet herstel tonen</h3></div></a>
+    <a class="card" href="https://www.eredivisiebasketballleiden.nl/actueel/nieuws/bericht/nieuwe-general-manager-roeland-schaftenaar-samen-de-volgende-stap-zetten" target="_blank" rel="noopener"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/33f07ed6-a327-47ab-91b8-8e1e711518c2.jpg&w=700" alt=""><div class="txt"><div class="date">5 okt 2026</div><h3>Nieuwe general manager Roeland Schaftenaar</h3></div></a>
+    <a class="card" href="https://www.eredivisiebasketballleiden.nl/actueel/nieuws/bericht/stan-van-den-elzen-keert-zaterdag-terug-naar-leiden" target="_blank" rel="noopener"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/e6cc8209-3ffd-4db5-8a28-7e2151ae09b1.jpg&w=700" alt=""><div class="txt"><div class="date">7 okt 2026</div><h3>Stan van den Elzen keert terug naar Leiden</h3></div></a>
+    <a class="card" href="https://www.eredivisiebasketballleiden.nl/actueel/nieuws/bericht/kjeld-zuidema-de-overstap-naar-leiden-is-goed-voor-mijn-ontwikkeling" target="_blank" rel="noopener"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/3cc67faa-5736-401d-8ae1-71356c72fb41.jpg&w=700" alt=""><div class="txt"><div class="date">1 okt 2026</div><h3>Kjeld Zuidema: “De overstap is goed voor mijn ontwikkeling”</h3></div></a>
+  </div>
+</div></section>
+
+<section class="sec off"><div class="wrap">
+  <div class="duo">
+    <div class="result">
+      <div class="bg"></div>
+      <div class="eyebrow" data-nl="Uitslag · vr 2 oktober · BNXT League" data-en="Result · Fri 2 October · BNXT League"></div>
+      <div>
+        <div class="score"><span class="t">Rotterdam</span><span class="n">71<em> – </em>76</span><span class="t">ZZ Leiden</span></div>
+        <div class="quarters"><span>23-14</span><span>15-18</span><span>21-18</span><span>12-26</span></div>
+      </div>
+      <div class="potg"><span data-nl="<b>Speler van de wedstrijd:</b> Nik Graves, 19 punten" data-en="<b>Player of the Game:</b> Nik Graves, 19 points"></span><span style="display:flex;align-items:center;gap:8px;font-size:11px;opacity:.85">presented by <img src="assets/zz-logo.png" alt="Zorg en Zekerheid"></span></div>
+    </div>
+    <a class="spot" href="selectie.html">
+      <img src="https://www.eredivisiebasketballleiden.nl/images/optimized/d0560477-7c8d-407d-a218-25aaa1fec6b4.png&w=900" alt="Roel van Overbeek">
+      <span class="num">1</span>
+      <div class="txt">
+        <div class="eyebrow" style="color:var(--blue)" data-nl="Spelersprofiel" data-en="Player profile"></div>
+        <div class="first">Roel</div><div class="last">van Overbeek</div>
+        <div class="pos">Guard · 1.88 m</div>
+        <q>Ik wil heel graag kampioen worden.</q>
+        <span class="btn btn-blue btn-sm" data-nl="Bekijk de selectie" data-en="View the squad"></span>
+      </div>
+    </a>
+  </div>
+</div></section>
+
+<section class="sec dark" id="tv"><div class="wrap">
+  <div class="sec-head">
+    <h2 class="display">ZZ TV</h2>
+    <a class="more" href="https://linktr.ee/zzleidenbasketball" target="_blank" rel="noopener" data-nl="YouTube en podcast &rarr;" data-en="YouTube and podcast &rarr;"></a>
+  </div>
+  <div class="tv-row">
+    <div class="tv"><div class="th"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/325ccebb-d637-4f2c-ad3f-e8428266897e.jpg&w=600" alt=""></div><div class="t"><small>Highlights</small><b>Rotterdam vs ZZ Leiden</b></div></div>
+    <div class="tv"><div class="th"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/bb89728f-e5cc-428e-8045-6c711ff773df.jpg&w=600" alt=""></div><div class="t"><small data-nl="Na de wedstrijd" data-en="Post game"></small><b data-nl="Interviews na de zege" data-en="Post game interviews"></b></div></div>
+    <div class="tv"><div class="th"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/c0697658-3ad5-4bfc-9a27-d1f2ea4f69c5.jpg&w=600" alt=""></div><div class="t"><small>Fit voor de wedstrijd</small><b data-nl="Herstel na de wedstrijd" data-en="Recovery after the game"></b></div></div>
+    <div class="tv"><div class="th"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/156129d0-6b65-4211-b451-017ff6249f3c.jpg&w=600" alt=""></div><div class="t"><small>Podcast</small><b data-nl="De ZZ Leiden podcast" data-en="The ZZ Leiden podcast"></b></div></div>
+  </div>
+  <p class="note" data-nl="Concept: in de echte site komen hier de video's van het YouTube kanaal en de podcast." data-en="Concept: on the real site this pulls in videos from the YouTube channel and the podcast."></p>
+</div></section>
+
+<section class="sec" id="community"><div class="wrap">
+  <div class="com">
+    <div class="com-img"></div>
+    <div class="com-txt">
+      <div class="eyebrow" data-nl="Maatschappelijk" data-en="Community"></div>
+      <h2 class="display" data-nl="Meer dan basketbal" data-en="More than basketball"></h2>
+      <p data-nl="Samen met Zorg en Zekerheid brengen we kinderen in Leiden en omgeving in beweging, met clinics op scholen, ZZ Inclusief en bezoeken aan het ziekenhuis." data-en="Together with Zorg en Zekerheid we get children in Leiden and the region moving, with school clinics, ZZ Inclusief and hospital visits."></p>
+      <div class="com-stats">
+        <div><strong>800</strong><span data-nl="clinics per jaar" data-en="clinics a year"></span></div>
+        <div><strong>22</strong><span data-nl="SCOL scholen" data-en="SCOL schools"></span></div>
+        <div><strong>4.500</strong><span data-nl="leerlingen" data-en="pupils"></span></div>
+      </div>
+      <a href="https://www.eredivisiebasketballleiden.nl/maatschappelijk" target="_blank" rel="noopener" class="btn btn-lime" data-nl="Doe mee" data-en="Get involved"></a>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="shop">
+    <div class="shop-img"></div>
+    <div class="shop-txt">
+      <div class="eyebrow" style="color:var(--blue)">Fanshop</div>
+      <h2 class="display" data-nl="Draag het blauw" data-en="Wear the blue"></h2>
+      <p data-nl="Shirts, hoodies en meer voor elke Leiden supporter, in de zaal en daarbuiten." data-en="Shirts, hoodies and more for every Leiden supporter, in the hall and beyond."></p>
+      <a href="https://www.zzleidenfanshop.nl" target="_blank" rel="noopener" class="btn btn-blue" style="align-self:flex-start" data-nl="Naar de fanshop" data-en="Visit the fanshop"></a>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec off" id="partners"><div class="wrap">
+  <div class="sec-head">
+    <h2 class="display" data-nl="Onze partners" data-en="Our partners"></h2>
+    <p style="max-width:420px;color:var(--grey)" data-nl="54 bedrijven maken topbasketbal in Leiden mogelijk. Elke partner verdient een plek die je ziet." data-en="54 companies make top basketball in Leiden possible. Every partner deserves a place you can see."></p>
+  </div>
+  <div class="strategic">
+    <img src="assets/zz-logo.png" alt="Zorg en Zekerheid">
+    <div>
+      <div class="eyebrow" data-nl="Strategisch partner sinds 2006" data-en="Strategic partner since 2006"></div>
+      <h3>Zorg en Zekerheid</h3>
+      <p data-nl="Samen werken we aan de gezondste regio van Nederland, op het veld en in de wijk." data-en="Together we work towards the healthiest region in the Netherlands, on court and in the community."></p>
+    </div>
+  </div>
+  <div class="tier-strip">
+    <div class="tier"><h4>Outstanding</h4><div class="lg"><i></i><i></i></div></div>
+    <div class="tier"><h4>Supreme</h4><div class="lg"><i></i><i></i><i></i><i></i></div></div>
+    <div class="tier"><h4>Premium</h4><div class="lg"><i></i><i></i><i></i><i></i></div></div>
+    <div class="tier"><h4>Business Seat</h4><div class="lg"><i></i><i></i><i></i><i></i></div></div>
+    <div class="tier"><h4>Start-up</h4><div class="lg"><i></i><i></i></div></div>
+  </div>
+  <div class="become">
+    <div>
+      <h3 data-nl="Word partner" data-en="Become a partner"></h3>
+      <p data-nl="Zes pakketten, van Start-up tot Strategic. Zichtbaar in de zaal, online en in de business club." data-en="Six packages, from Start-up to Strategic. Visible in the hall, online and in the business club."></p>
+    </div>
+    <a href="https://www.eredivisiebasketballleiden.nl/businessclub/sport-sponsor-worden" target="_blank" rel="noopener" class="btn btn-blue" data-nl="Neem contact op" data-en="Get in touch"></a>
+  </div>
+  <p class="note" data-nl="Concept: de logovakken zijn placeholders voor de echte partnerlogo's per pakket." data-en="Concept: the logo boxes are placeholders for the real partner logos per tier."></p>
+</div></section>
+
+<section class="sec" id="fotos"><div class="wrap">
+  <div class="sec-head">
+    <h2 class="display" data-nl="Foto's" data-en="Photos"></h2>
+    <a class="more" href="https://www.eredivisiebasketballleiden.nl/actueel/fotos" target="_blank" rel="noopener" data-nl="Alle albums &rarr;" data-en="All albums &rarr;"></a>
+  </div>
+  <div class="albums">
+    <a class="album" href="https://www.eredivisiebasketballleiden.nl/actueel/fotos/fotoalbum/?album=1121" target="_blank" rel="noopener"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/8df0cdc4-2c24-44b3-983a-6a5752b87a8a.jpg&w=700" alt=""><div class="txt"><small>10 okt 2026</small><b>Leiden vs Brussels</b></div></a>
+    <a class="album" href="https://www.eredivisiebasketballleiden.nl/actueel/fotos/fotoalbum/?album=1120" target="_blank" rel="noopener"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/3aeec886-70e2-41bd-9c35-3334449bc8a7.jpg&w=700" alt=""><div class="txt"><small>2 okt 2026</small><b>Rotterdam vs Leiden</b></div></a>
+    <a class="album" href="https://www.eredivisiebasketballleiden.nl/actueel/fotos/fotoalbum/?album=1119" target="_blank" rel="noopener"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/5552a2dd-0195-47c2-aaa1-1bf2ae10977f.jpg&w=700" alt=""><div class="txt"><small>20 sep 2026</small><b>Hasselt vs Leiden</b></div></a>
+    <a class="album" href="https://www.eredivisiebasketballleiden.nl/actueel/fotos/fotoalbum/?album=1118" target="_blank" rel="noopener"><img src="https://www.eredivisiebasketballleiden.nl/images/optimized/e0b3a12c-edd9-4e5e-bf17-480522311224.jpg&w=700" alt=""><div class="txt"><small>19 sep 2026</small><b>Mechelen vs Leiden</b></div></a>
+  </div>
+  <p class="credit" data-nl="Foto's: <b>de clubfotografen van ZZ Leiden</b>. In de echte site krijgt elke foto een naamsvermelding." data-en="Photos: <b>ZZ Leiden's club photographers</b>. On the real site every photo is credited by name."></p>
+</div></section>
+
+<section class="tickets" id="tickets"><div class="wrap">
+  <div>
+    <h2 class="display" data-nl="Zie je in de 1574" data-en="See you at the 1574"></h2>
+    <p data-nl="Losse tickets, seizoenskaarten en groepen." data-en="Single tickets, season tickets and groups."></p>
+  </div>
+  <a href="https://www.eredivisiebasketballleiden.nl" class="btn btn-blue" target="_blank" rel="noopener" data-nl="Naar de ticketshop" data-en="Go to the ticket shop"></a>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot">
+    <div><img src="assets/crest.png" alt="ZZ Leiden"><div>Zorg en Zekerheid Leiden<br>Sportcomplex 1574, Leiden</div>
+      <div class="foot-partner"><img src="assets/zz-logo.png" alt="Zorg en Zekerheid"></div></div>
+    <div><b>Club</b><a href="selectie.html" data-nl="Selectie" data-en="Squad"></a><a href="#programma" data-nl="Programma" data-en="Fixtures"></a><a href="#community" data-nl="Maatschappelijk" data-en="Community"></a><a href="#fotos" data-nl="Foto's" data-en="Photos"></a></div>
+    <div><b>Business</b><a href="#partners">Partners</a><a href="https://www.eredivisiebasketballleiden.nl/businessclub" target="_blank" rel="noopener">Business club</a></div>
+    <div><b>Social</b><a href="https://www.instagram.com/zzleidenbasketball/" target="_blank" rel="noopener">Instagram</a><a href="https://linktr.ee/zzleidenbasketball" target="_blank" rel="noopener">YouTube · TikTok · Podcast</a></div>
+  </div>
+  <div class="disclaimer" data-nl="Dit is een concept, ontworpen door Lenny Otoo als onderdeel van een voorstel aan ZZ Leiden. Geen officiële website. Programma, selectie, nieuws en foto's komen van de clubwebsite; logo's, foto's en namen zijn eigendom van de club en haar partners." data-en="This is a concept, designed by Lenny Otoo as part of a proposal to ZZ Leiden. Not the official website. Fixtures, squad, news and photos come from the club website; logos, photos and names belong to the club and its partners."></div>
+</div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
